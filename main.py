@@ -23,8 +23,8 @@ if video.isOpened() == False:
 ret,frame = video.read()
 
 # Создаем объекты для обнаружения и отслеживания объектов
-#detection = OpenCVDetection()
-detection = NoOpenCVDetection()
+detection = OpenCVDetection()
+#detection = NoOpenCVDetection()
 tracking = ObjectTracking()
 
 # Проверяем, удалось ли считать первый кадр видеофайла
