@@ -16,7 +16,8 @@ class NoOpenCVDetection():
     
 
     def compare_images(self, frame1, frame2):
-    
+        # функция сравнения двух кадров
+        # возвращает кадр с красной маркировкой на местах, где были изменения
    
 
 
@@ -81,6 +82,8 @@ class NoOpenCVDetection():
                 xmax+=1 #увеличьте ширину
                 theStack.append((y,x+1)) #добавьте следующую координату в стек для проверки
 
+
+    # функция для объединения перекрывающихся прямоугольников
     def cluster_find(self,boxes, overlapThresh):
         if len(boxes) == 0:
             return []
@@ -131,21 +134,25 @@ class NoOpenCVDetection():
 
         return boxes[pick].astype("int")
     
+    # функция для нахождения центра прямоугольника
     def findCenter(self, rect ):
 
         return rect[0] + (rect[2] - rect[0] )// 2, rect[1] + (rect[3]-rect[1])//2
-
+    
+    # функция для нахождения расстояния между центрами двух прямоугольников
     def findDistanceRectangles(self, first, second):
         x1, y1 = self.findCenter(first)
         x2, y2 = self.findCenter(second)
         return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
+    # функция для объединения двух прямоугольников в один
     def mergeRectangles(self,first, second):
         first[0] = min(first[0], second[0])
         first[1] = min(first[1], second[1])
         first[2] = max(first[2], second[2]) 
-        first[3] = max(first[3], second[3]) 
+        first[3] = max(first[3], second[3])
 
+    # функция для объединения перекрывающихся прямоугольников в списке
     def mergeRectanglesList(self,rectangles,step):
         def isShortDistance(first, second):
             min_dist = min((first[2] - first[0] )// 2 + (second[2] - second[0] ) // 2, (first[3]-first[1])// 2 + (second[3]-second[1]) // 2)
@@ -157,7 +164,7 @@ class NoOpenCVDetection():
                     self.mergeRectangles(rectangles[i], rectangles[j])
         return
 
-
+    # функция для обновления кадра и поиска объектов на нем
     def update(self, frame):
         frame_copy=frame.copy()
         rectangle_list = []
@@ -189,8 +196,7 @@ class NoOpenCVDetection():
             rectangle_list.astype('float')
             #создание плавающих элементов для правильного вычисления перекрытия
             #вызов cluster_find для удаления перекрывающихся / внутренних прямоугольников
-            #rectList = self.cluster_find(rectangle_list,0)
-            self.mergeRectanglesList(rectangle_list,5)
+            self.mergeRectanglesList(rectangle_list,15)
             rectList = self.cluster_find(rectangle_list,0)
             for p in  rectList: #rectlist содержит 4 координаты для каждого прямоугольника
                 cv2.rectangle(frame, (p[0], p[1]), (p[2], p[3]), (255, 255, 0), 2)
