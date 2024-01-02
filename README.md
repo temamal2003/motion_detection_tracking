@@ -19,7 +19,10 @@
 #### Оригинальные видео
 
 
-https://github.com/temamal2003/motion_detection_tracking/assets/105546080/984edc96-4963-4a5a-8777-e6e3b2144558
+
+
+https://github.com/temamal2003/motion_detection_tracking/assets/105546080/8d26a199-3b4a-41e2-ab68-b88cf71affff
+
 
 
 
