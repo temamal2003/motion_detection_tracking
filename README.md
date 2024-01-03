@@ -21,11 +21,11 @@
 
 
 
-https://github.com/temamal2003/motion_detection_tracking/assets/105546080/13fa6b84-8a81-4638-9907-661b4058f4b2
+
+https://github.com/temamal2003/motion_detection_tracking/assets/105546080/582ef0a8-471c-4f31-82d8-284fff892c53
 
 
 
-https://github.com/temamal2003/motion_detection_tracking/assets/105546080/8d26a199-3b4a-41e2-ab68-b88cf71affff
 
 
 
@@ -38,3 +38,16 @@ https://github.com/temamal2003/motion_detection_tracking/assets/105546080/ca989a
 
 
 #### OpenCV
+
+![Видео без названия — сделано в Clipchamp (1)](https://github.com/temamal2003/motion_detection_tracking/assets/105546080/dde3a12a-85ec-4f44-a437-e235cabfb384)
+
+
+![Видео без названия — сделано в Clipchamp (2)](https://github.com/temamal2003/motion_detection_tracking/assets/105546080/9d6e204a-c585-4d9d-8de0-87086cb3e870)
+
+#### Без OpenCV
+![Видео без названия — сделано в Clipchamp (3)](https://github.com/temamal2003/motion_detection_tracking/assets/105546080/bdc9aa78-46b6-4630-98e0-b341dae3bd44)
+
+
+![Видео без названия — сделано в Clipchamp (4)](https://github.com/temamal2003/motion_detection_tracking/assets/105546080/b6dcf20e-6912-4e26-ab32-b05c72f4b36b)
+
+
